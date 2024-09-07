@@ -1,0 +1,17 @@
+.LoadMoreBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #10375a;
+  border: none;
+  color: #cad8de;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.LoadMoreBtn:hover {
+  background-color: #cad8de;
+  color: #10375a;
+}

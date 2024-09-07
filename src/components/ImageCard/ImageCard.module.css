@@ -1,0 +1,27 @@
+.ImageCard {
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ImageCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ImageCard:hover img {
+  transform: scale(1.1);
+  transition: transform 0.5s;
+} 
+
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1440px) {
+  .ImageCard {
+    width: 350px;
+    height: 350px;
+  }
+}
