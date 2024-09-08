@@ -40,3 +40,15 @@
   width: 16px;
   height: 16px;
 }
+
+.SearchBar__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 10px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #10375a;
+  cursor: pointer;
+}

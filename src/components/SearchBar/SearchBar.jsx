@@ -1,21 +1,31 @@
 import IconSearch from '../../assets/search.svg';
 import css from './SearchBar.module.css';
-import debounce from '../../helpers/debounce';
+import { useState } from 'react';
 
 const SearchBar = ({ onSearch }) => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch(inputValue);
+  };
+
   return (
-    <div className={css.SearchBar}>
+    <form className={css.SearchBar} onSubmit={handleSubmit}>
       <div className={css.SearchBar__inputWrapper}>
         <input 
           className={css.SearchBar__input}
           type='text' 
           placeholder='Search for images' 
-          onChange={debounce((e) => onSearch(e.target.value), 500)}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
         />
-        <img src={IconSearch} />
+        <button type="submit" className={css.SearchBar__button}>
+          <img src={IconSearch} alt="Search" />
+        </button>
       </div>
-    </div>
-  )
-}
+    </form>
+  );
+};
 
 export default SearchBar;
