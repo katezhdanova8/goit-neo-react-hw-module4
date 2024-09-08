@@ -57,12 +57,16 @@ function App() {
   useEffect(() => {
     if (searchQuery) {
       fetchData();
-    }
+    } 
   }, [searchQuery, page, fetchData]);
 
   const handleSearch = (value) => {
-    setPage(1);
-    setSearchQuery(value);
+    if (value) {
+      setPage(1);
+      setSearchQuery(value);
+    } else {
+      toast.error('Please, fill the field', { position: 'top-right' });
+    }
   };
 
   const onLoadMore = () => {
